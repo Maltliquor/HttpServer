@@ -1,0 +1,2 @@
+add_executable(demo_server demo_http_server.cpp)
+target_link_libraries(demo_server serverlib_net)
