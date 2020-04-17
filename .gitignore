@@ -1,0 +1,9 @@
+# ignore directory
+/build
+/src/test/Webpage
+
+# ignore log file
+*.log
+
+# ignore output file
+*.o
