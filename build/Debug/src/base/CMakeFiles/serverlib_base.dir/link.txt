@@ -1,2 +1,0 @@
-/usr/bin/ar cr ../../lib/libserverlib_base.a  CMakeFiles/serverlib_base.dir/CountDownLatch.cpp.o CMakeFiles/serverlib_base.dir/Exception.cpp.o CMakeFiles/serverlib_base.dir/CurrentThread.cpp.o CMakeFiles/serverlib_base.dir/Thread.cpp.o
-/usr/bin/ranlib ../../lib/libserverlib_base.a

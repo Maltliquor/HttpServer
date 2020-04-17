@@ -1,3 +1,0 @@
-/home/http_server/build/Debug/src/test/CMakeFiles/demo_server.dir
-/home/http_server/build/Debug/src/base/CMakeFiles/serverlib_base.dir
-/home/http_server/build/Debug/src/net/CMakeFiles/serverlib_net.dir

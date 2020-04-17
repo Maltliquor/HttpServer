@@ -1,1 +1,0 @@
-g++   -g -Wall -std=c++11 -D_PTHREADS -Wno-unused-parameter -O0    CMakeFiles/demo_server.dir/demo_http_server.cpp.o  -o ../../bin/demo_server -rdynamic ../../lib/libserverlib_net.a ../../lib/libserverlib_base.a -lpthread -lrt 
