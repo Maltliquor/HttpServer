@@ -39,20 +39,20 @@ $ ./demo_server [thread_numbers]
 ## Model
 
 -	本项目采用的并发模型为Reactor模式+One Loop per Thread，图示如下：  
-![webbench-server](image/dan_xian_cheng_nginx.png)
+![thread_pool](image/threadpool_gh.png)
 
 - 类间组织关系如下图：  
-![webbench-server](image/dan_xian_cheng_nginx.png)
+![class](image/uml class_gh.png.png)
 
 
 ## Test
 
 使用webbench进行连接测试 
-Nginx测试结果：1000个客户端，持续请求30s，速率为998230 pages/min
-![webbench-server](image/dan_xian_cheng_nginx.png)
+Nginx测试结果：1000个客户端，持续请求30s，速率为998230 pages/min  
+![webbench-nginx](image/webbench-nginx.png)  
  
-HttpServer测试结果：1000个客户端，持续请求30s，速率为788 pages/min
-![webbench-server](image/dan_xian_cheng_nginx.png)
+HttpServer测试结果：1000个客户端，持续请求30s，速率为788 pages/min  
+![webbench-server](image/webbench-server.png)  
 由结果可见，本服务器在高并发环境下运行效果并不理想，与反向代理引擎nginx相比，性能差距巨大。
 
 
