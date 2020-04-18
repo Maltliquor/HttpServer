@@ -1,5 +1,5 @@
 # HttpServer
-[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
+[![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)  
 A tiny web server in C++
 
 ## Table of Contents
@@ -75,7 +75,7 @@ $ ./demo_server [thread_numbers]
 ```
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 ```
-
+  
 UML时序图详见：[代码工作流程.md](代码工作流程.md)。
 
 ## Test
