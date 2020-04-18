@@ -16,7 +16,7 @@ A tiny web server in C++
 
 - 本项目为参考muduo编写的简化版Web服务器，实现的功能为服务端解析GET请求并返回静态资源、支持HTTP长连接。  
 - 代码部分关于thread pool和线程调度的部分采用了muduo的源码，出于后续改进的需要，本项目删除了Buffer类、LogFile相关的类、Timer相关的类以及Acceptor类，并重写了HttpResponse、HttpServer等类的成员函数。
-- 测试网址：[HttpServer主页](39.101.190.70/) [HttpServer测试页](|39.101.190.70/test)  
+- 测试网址：[HttpServer主页](/39.101.190.70/) [HttpServer测试页](/39.101.190.70/test)  
 
 ## Environment
 
