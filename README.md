@@ -35,32 +35,32 @@ A tiny web server in C++
 5. 一个**标识准守规范的徽章**。请参考[徽章](#徽章)。
 
 ## Enviroment
+
 - OS: Ubuntu 16.04
 - Compiler: g++ 4.8
 
-## 安装
+## Install
 
-这个项目使用 [node](http://nodejs.org) 和 [npm](https://npmjs.com)。请确保你本地安装了它们。
 
 ```sh
 $ ./build.sh
 ```
 
-## 使用说明
+## Usage
 
 这只是一个文档包，你可以打印出 [spec.md](spec.md) 到输出窗口。
 
 ```sh
-$ standard-readme-spec
-./WebServer [-t thread_numbers]
+$ cd build/Debug/bin
+$ ./WebServer [thread_numbers]
 ```
 
-### 生成器
+### Technical points
 
 想要使用生成器的话，请看 [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme)。
 有一个全局的可执行文件来运行包里的生成器，生成器的别名叫 `standard-readme`。
 
-## 徽章
+## Model
 如果你的项目遵循 Standard-Readme 而且项目位于 Github 上，非常希望你能把这个徽章加入你的项目。它可以更多的人访问到这个项目，而且采纳 Stand-README。 加入徽章**并非强制的**。 
 
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
@@ -71,32 +71,18 @@ $ standard-readme-spec
 [![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
 ```
 
-## 示例
+UML时序图详见：[代码工作流程](代码工作流程.md)。
 
-想了解我们建议的规范是如何被应用的，请参考 [example-readmes](example-readmes/)。
+## Test
 
-## 相关仓库
-
+使用webbench进行连接测试
 - [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
 - [open-source-template](https://github.com/davidbgk/open-source-template/) — 一个鼓励参与开源的 README 模板。
 
-## 维护者
+### Update
 
-[@RichardLitt](https://github.com/RichardLitt)。
+由于项：
+- 增加Buffer类
+- 增加Timer类
+- 增加LogFile类：实现异步读写日志的功能
 
-## 如何贡献
-
-非常欢迎你的加入！[提一个 Issue](https://github.com/RichardLitt/standard-readme/issues/new) 或者提交一个 Pull Request。
-
-
-标准 Readme 遵循 [Contributor Covenant](http://contributor-covenant.org/version/1/3/0/) 行为规范。
-
-### 贡献者
-
-感谢以下参与项目的人：
-<a href="graphs/contributors"><img src="https://opencollective.com/standard-readme/contributors.svg?width=890&button=false" /></a>
-
-
-## 使用许可
-
-[MIT](LICENSE) © Richard Littauer
