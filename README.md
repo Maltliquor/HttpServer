@@ -15,7 +15,7 @@ A tiny web server in C++
 ## Introduction
 
 - 本项目为参考muduo编写的简化版Web服务器，实现的功能为服务端解析GET请求并返回静态资源、支持HTTP长连接。  
-- 代码部分关于thread pool和线程调度的部分采用了muduo的源码，出于后续改进的需要，本项目删除了Buffer类、Timer相关的类以及Acceptor类，并重写了HttpResponse、HttpServer等类的成员函数。
+- 代码部分关于thread pool和线程调度的部分采用了muduo的源码，出于后续改进的需要，本项目删除了Buffer类、LogFile相关的类、Timer相关的类以及Acceptor类，并重写了HttpResponse、HttpServer等类的成员函数。
 - 测试网址：[HttpServer主页](https://39.101.190.70/) [HttpServer测试页](https://39.101.190.70/test)  
 
 ## Environment
@@ -38,27 +38,28 @@ $ ./demo_server [thread_numbers]
 
 ## Model
 
-并发模型为Reactor+非阻塞IO+线程池，新连接Round Robin分配，
+-	本项目采用的并发模型为Reactor模式+One Loop per Thread，图示如下：  
+![webbench-server](image/dan_xian_cheng_nginx.png)
 
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
+- 类间组织关系如下图：  
+![webbench-server](image/dan_xian_cheng_nginx.png)
 
-为了加入徽章到 Markdown 文本里面，可以使用以下代码：
-
-```
-[![standard-readme compliant](https://img.shields.io/badge/readme%20style-standard-brightgreen.svg?style=flat-square)](https://github.com/RichardLitt/standard-readme)
-```
-  
-UML时序图详见：[代码工作流程.md](代码工作流程.md)。
 
 ## Test
 
-使用webbench进行连接测试
-![cloc](https://github.com/linyacool/WebServer/blob/master/datum/cloc.png)
+使用webbench进行连接测试 
+Nginx测试结果：1000个客户端，持续请求30s，速率为998230 pages/min
+![webbench-server](image/dan_xian_cheng_nginx.png)
+ 
+HttpServer测试结果：1000个客户端，持续请求30s，速率为788 pages/min
+![webbench-server](image/dan_xian_cheng_nginx.png)
+由结果可见，本服务器在高并发环境下运行效果并不理想，与反向代理引擎nginx相比，性能差距巨大。
+
 
 ## Update
 
-由于项：
-- 增加Buffer类
-- 增加Timer类
-- 增加LogFile类：实现异步读写日志的功能
+要实现高并发高性能的Web服务器，需要在以下几个方面进行改进：
+- 增加Buffer类：write()写入数据，会阻塞直到全部数据写完。若一次write()未写完所有数据，为避免write()阻塞在线程中，先在buffer类中存储未发送完的数据，立即返回并等待下一次可写事件。
+- 增加Timer类：定时器事件是服务端工作的重要组成部分，是心跳包等工作机制实现的基础。系统内产生的多个定时器事件组成了定时器队列，常见的队列组织形式包括时间轮，时间堆，本项目拟采用时间堆的结构操作定时器事件。
+- 增加LogFile类：实现异步读写日志的功能。日志记录了服务器运行时的状态，是系统调试和维护的依据。在多线程并发模型中，为生成准确的日志文件，muduo使用双缓冲技术，并成功实现了高效的异步日志记录功能。
 
