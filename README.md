@@ -52,10 +52,10 @@ $ ./build.sh
 
 ```sh
 $ cd build/Debug/bin
-$ ./WebServer [thread_numbers]
+$ ./demo_server [thread_numbers]
 ```
 
-### Technical points
+## Technical points
 
 想要使用生成器的话，请看 [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme)。
 有一个全局的可执行文件来运行包里的生成器，生成器的别名叫 `standard-readme`。
@@ -79,7 +79,7 @@ UML时序图详见：[代码工作流程](代码工作流程.md)。
 - [Art of Readme](https://github.com/noffle/art-of-readme) — 💌 写高质量 README 的艺术。
 - [open-source-template](https://github.com/davidbgk/open-source-template/) — 一个鼓励参与开源的 README 模板。
 
-### Update
+## Update
 
 由于项：
 - 增加Buffer类
