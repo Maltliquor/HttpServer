@@ -5,15 +5,13 @@ A tiny web server in C++
 ## Table of Contents
 
 - [Introduction](#Introduction)
-- [安装](#安装)
-- [使用说明](#使用说明)
-	- [生成器](#生成器)
-- [徽章](#徽章)
-- [示例](#示例)
+- [Enviroment](#Enviroment)
+- [Install](#Install)
+- [Usage](#Usage)
 - [相关仓库](#相关仓库)
-- [维护者](#维护者)
-- [如何贡献](#如何贡献)
-- [使用许可](#使用许可)
+- [Model](#Model)
+- [Test](#Test)
+- [Update](#Update)
 
 ## Introduction
 
@@ -55,8 +53,8 @@ $ ./demo_server [thread_numbers]
 
 ## Technical points
 
-* 使用Epoll边沿触发的IO多路复用技术，非阻塞IO，使用Reactor模式
-* 使用多线程充分利用多核CPU，并使用线程池避免线程频繁创建销毁的开销
+- 使用Epoll边沿触发的IO多路复用技术，非阻塞IO，使用Reactor模式
+- 使用多线程充分利用多核CPU，并使用线程池避免线程频繁创建销毁的开销
 * 使用基于小根堆的定时器关闭超时请求
 * 主线程只负责accept请求，并以Round Robin的方式分发给其它IO线程(兼计算线程)，锁的争用只会出现在主线程和某一特定线程中
 * 使用eventfd实现了线程的异步唤醒
