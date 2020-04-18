@@ -2,9 +2,9 @@
 [![license](https://img.shields.io/github/license/mashape/apistatus.svg)](https://opensource.org/licenses/MIT)
 A tiny web server in C++
 
-## 内容列表
+## Table of Contents
 
-- [背景](#背景)
+- [Introduction](#Introduction)
 - [安装](#安装)
 - [使用说明](#使用说明)
 	- [生成器](#生成器)
@@ -15,9 +15,9 @@ A tiny web server in C++
 - [如何贡献](#如何贡献)
 - [使用许可](#使用许可)
 
-## 背景
+## Introduction
 
-`标准 Readme` 最开始因为 [@maxogden](https://github.com/maxogden) 在项目 [feross/standard](https://github.com/feross/standard) 的[这个 Issue](https://github.com/feross/standard/issues/141) 中提出，是否标准化 README 会有助于帮助大家。很多人在仓库 [zcei's standard-readme](https://github.com/zcei/standard-readme/issues/1) 就这个想法进行了讨论。在我维护仓库 [IPFS](https://github.com/ipfs) 的时候，我需要在这个组织中推广标准化的 Readme，因此这个项目也就从这开始了。
+`标准 Readme` 本项目为C++11编写的Web服务器，解析了get、head请求，可处理静态资源，支持HTTP长连接，支持管线化请求，并实现了异步日志，记录服务器运行状态。 [主页](https://39.101.190.70/) [测试页](https://39.101.190.70/test) 
 
 > 如果你的文档是完整的，那么使用你代码的人就不用再去看代码了。这非常的重要。它使得你可以分离接口文档与具体实现。它意味着你可修改实现的代码而保持接口与文档不变。
 
@@ -25,9 +25,6 @@ A tiny web server in C++
 
 —— [Ken Williams, Perl Hackers](http://mathforum.org/ken/perl_modules.html#document)
 
-写 README 从某种程度上来说相当不易，一直维护下去更是难能可贵。如果可以减少这个过程，则可以让写代码与修改代码更容易，使得是否在说明中指明一处需改有无必要更加清楚，你可以花费更少的时间来考虑是否你最初的文档是否需要更新，你可以分配更多的时间来写代码而非维护文档。
-
-同时，标准化在某些别的地方也有好处。有了标准化，用户就可以花费更少的时间来搜索他们需要的信息，他们同时可以做一个工具来从描述中搜集信息，自动跑示例代码，检查授权协议等等。
 
 这个仓库的目标是：
 
@@ -37,12 +34,16 @@ A tiny web server in C++
 4. 一个**生成器**用来快速搭建新的 README 的框架。请参考 [generator-standard-readme](https://github.com/RichardLitt/generator-standard-readme)。
 5. 一个**标识准守规范的徽章**。请参考[徽章](#徽章)。
 
+## Enviroment
+- OS: Ubuntu 16.04
+- Compiler: g++ 4.8
+
 ## 安装
 
 这个项目使用 [node](http://nodejs.org) 和 [npm](https://npmjs.com)。请确保你本地安装了它们。
 
 ```sh
-$ npm install --global standard-readme-spec
+$ ./build.sh
 ```
 
 ## 使用说明
@@ -51,7 +52,7 @@ $ npm install --global standard-readme-spec
 
 ```sh
 $ standard-readme-spec
-# Prints out the standard-readme spec
+./WebServer [-t thread_numbers]
 ```
 
 ### 生成器
