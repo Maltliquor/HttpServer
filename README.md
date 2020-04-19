@@ -42,7 +42,7 @@ $ ./demo_server [thread_numbers]
 ![thread_pool](image/threadpool_gh.png)
 
 - 类间组织关系如下图：  
-![class](image/uml class_gh.png)
+![class](image/"uml class_gh.png")
 
 
 ## Test
