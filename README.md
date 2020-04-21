@@ -47,7 +47,7 @@ $ ./demo_server [thread_numbers]
 
 ## Test
 
-使用webbench进行连接测试 
+使用webbench进行连接测试  
 Nginx测试结果：1000个客户端，持续请求30s，速率为998230 pages/min  
 ![webbench-nginx](image/webbench_nginx.png)  
  
