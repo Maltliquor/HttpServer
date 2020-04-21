@@ -49,10 +49,10 @@ $ ./demo_server [thread_numbers]
 
 使用webbench进行连接测试 
 Nginx测试结果：1000个客户端，持续请求30s，速率为998230 pages/min  
-![webbench-nginx](image/webbench-nginx.png)  
+![webbench-nginx](image/webbench_nginx.png)  
  
 HttpServer测试结果：1000个客户端，持续请求30s，速率为788 pages/min  
-![webbench-server](image/webbench-server.png)  
+![webbench-server](image/webbench_server.png)  
 由结果可见，本服务器在高并发环境下运行效果并不理想，与反向代理引擎nginx相比，性能差距巨大。
 
 
